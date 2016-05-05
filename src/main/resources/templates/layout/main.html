@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.thymeleaf.org/extras/dialect">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>25th-floor Workshop</title>
+    <meta name="descriptio" content=""/>
+    <meta name="viewport" content="width=device-width, user-scalable=no"/>
+    <link th:href="@{/webjars/bootstrap/3.3.6/css/bootstrap.min.css}" rel="stylesheet"/>
+</head>
+<body>
+
+<div class="messages" layout:include="fragments/messages :: messages">Messages</div>
+
+<div class="container-fluid">
+    <th:block layout:fragment="content">Content</th:block>
+</div>
+
+<script th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/3.3.6/js/bootstrap.min.js}"></script>
+
+<th:block layout:fragment="script"></th:block>
+</body>
+</html>

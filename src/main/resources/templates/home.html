@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.thymeleaf.org/extras/dialect"
+      layout:decorator="layout/main">
+<body>
+<th:block layout:fragment="content">
+
+    <h1>Invoices</h1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Number</th>
+                <th>Date</th>
+                <th>Address</th>
+                <th>VAT number</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr th:each="inv : ${invoices}">
+                <td th:text="${inv.getNumber()}"></td>
+                <td th:text="${inv.getIssuanceDate()}"></td>
+                <td>
+                    <span th:text="${inv.getReceiverAddress()}"></span>
+                    <span class="glyphicon" th:classappend="${inv.getValidAddress().getCssClass()}"></span>
+                </td>
+                <td>
+                    <span th:text="${inv.getVATnumber()}"></span>
+                    <span class="glyphicon" th:classappend="${inv.getValidVAT().getCssClass()}"></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</th:block>
+</body>
+</html>
